@@ -2,6 +2,7 @@
 
 TODO
 
+-   Disable buttons while sorting
 -   Bubble Sort
 -   Insertion Sort
 -   Selection Sort
