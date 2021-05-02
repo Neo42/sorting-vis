@@ -1,0 +1,42 @@
+#array-container {
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+.array-bar {
+	width: 5px;
+	display: inline-block;
+	margin: 0 1px;
+	background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+	background-attachment: fixed;
+}
+
+#button-row {
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+button {
+	margin: 1px;
+	display: grid;
+	place-items: center;
+	color: #fff;
+	background-color: #000;
+	border: 1px solid #e9ecef;
+	border-radius: 1px;
+	line-height: 2.63rem;
+	font-size: 0.325rem;
+	letter-spacing: 0.1em;
+	cursor: pointer;
+	height: 45px;
+	padding: 0 0.8rem;
+}
+
+svg#icon {
+	width: 1rem;
+	height: 1rem;
+}
