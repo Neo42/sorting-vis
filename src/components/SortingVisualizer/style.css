@@ -9,7 +9,7 @@
 	width: 5px;
 	display: inline-block;
 	margin: 0 1px;
-	background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+	background: linear-gradient(to left, #fedfe1, #f8c3cd);
 	background-attachment: fixed;
 }
 

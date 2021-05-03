@@ -4,7 +4,8 @@ import {
 	NUMBER_OF_ARRAY_BARS,
 	ANIMATION_SPEED_MS,
 	PRIMARY_GRADIENT,
-	SECONDARY_GRADIENT
+	SECONDARY_GRADIENT,
+	TERTIARY_GRADIENT
 } from "../../constants"
 import "./style.css"
 import GitHubCorner from "../GithubCorner"
@@ -16,19 +17,23 @@ const SortingVisualizer = () => {
 		let newArray = [...Array(NUMBER_OF_ARRAY_BARS).keys()]
 		newArray = newArray.map(() => randomIntFromInterval(5, 400))
 		setArray(newArray)
+		let arrayBars = document.querySelectorAll(".array-bar")
+		arrayBars.forEach((thing) => {
+			thing.style.background = SECONDARY_GRADIENT
+			thing.style.backgroundAttachment = "fixed"
+		})
 	}
 
 	const mergeSort = () => {
 		const animations = getMergeSortAnimations(array)
 		for (let i = 0; i < animations.length; i++) {
-			const arrayBars = document.getElementsByClassName("array-bar")
+			const arrayBars = document.querySelectorAll(".array-bar")
 			const isColorChange = i % 3 !== 2
 			if (isColorChange) {
 				const [barOneIdx, barTwoIdx] = animations[i]
 				const barOneStyle = arrayBars[barOneIdx].style
 				const barTwoStyle = arrayBars[barTwoIdx].style
-				const color =
-					i % 3 === 0 ? SECONDARY_GRADIENT : PRIMARY_GRADIENT
+				const color = i % 3 === 0 ? TERTIARY_GRADIENT : PRIMARY_GRADIENT
 				setTimeout(() => {
 					barOneStyle.background = color
 					barTwoStyle.background = color
@@ -65,7 +70,7 @@ const SortingVisualizer = () => {
 				</button>
 				<button>Merge Sort</button>
 				<button onClick={mergeSort}>
-					<PlayIcon id="icon"/>
+					<PlayIcon id="icon" />
 				</button>
 			</div>
 		</>
